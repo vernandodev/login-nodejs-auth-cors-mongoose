@@ -4,6 +4,11 @@ const cookieSession = require("cookie-session");
 const app = express();
 const dbConfig = require("./app/config/db.config");
 
+// routes
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
+// set port, listen for requests
+
 const db = require("./app/models");
 const Role = db.role;
 db.mongoose
